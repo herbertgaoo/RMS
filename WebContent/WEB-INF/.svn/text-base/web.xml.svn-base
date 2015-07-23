@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Recruitment Management System </display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+   
+   <servlet>
+    <servlet-name>UserCtl</servlet-name>
+    <servlet-class>Ctroller.UserCtl</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AppCtl</servlet-name>
+    <servlet-class>Ctroller.AppCtl</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>MCVCtl</servlet-name>
+    <servlet-class>Ctroller.MCVCtl</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RecCtl</servlet-name>
+    <servlet-class>Ctroller.RecCtl</servlet-class>
+  </servlet>
+<servlet>
+    <servlet-name>ResponseCtl</servlet-name>
+    <servlet-class>Ctroller.ResponseCtl</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>ResponseCtl</servlet-name>
+    <url-pattern>/user/Respon.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserCtl</servlet-name>
+    <url-pattern>/user/user.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AppCtl</servlet-name>
+    <url-pattern>/user/app.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MCVCtl</servlet-name>
+    <url-pattern>/user/mcv.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RecCtl</servlet-name>
+    <url-pattern>/user/rec.do</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

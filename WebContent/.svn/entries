@@ -1,0 +1,87 @@
+10
+
+dir
+9448
+svn://192.168.102.208/Innovation/SessionB/team01/01_DevelopmentLibrary/03_Production/RMS/WebContent
+svn://192.168.102.208
+
+
+
+2013-12-04T06:21:11.217709Z
+9448
+g13
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3380b9aa-77d3-0410-8f40-8546fbc22fba
+
+
+
+
+
+
+0
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+images
+dir
+
+index.jsp
+file
+
+
+
+
+2012-12-26T08:53:52.000000Z
+eeaff70c88d02f76d125e1ef2a7e7c9f
+2013-11-18T07:37:17.945950Z
+7480
+g12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+834
+
+js
+dir
+
+styles
+dir
+
+user
+dir
+

@@ -1,0 +1,50 @@
+10
+
+dir
+9448
+svn://192.168.102.208/Innovation/SessionB/team01/01_DevelopmentLibrary/03_Production/RMS/src
+svn://192.168.102.208
+
+
+
+2013-12-04T02:50:34.476664Z
+9396
+g11
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3380b9aa-77d3-0410-8f40-8546fbc22fba
+
+
+
+
+
+
+0
+
+BL
+dir
+
+Ctroller
+dir
+
+DAO
+dir
+
+DB
+dir
+
+Entities
+dir
+

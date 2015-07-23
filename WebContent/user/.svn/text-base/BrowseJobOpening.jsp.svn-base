@@ -1,0 +1,84 @@
+
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	String userID = (String) session.getAttribute("uId");
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<base href="<%=basePath%>">
+<title>Homepage for Applicants</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+</head>
+
+<body>
+	<img class="img" src="<%=request.getContextPath()%>/images/AppHome.jpg">
+	<hr>
+	<div class="nav">
+		<ul>
+			<li class="bgno"><a href="user/BrouseJobOpening.jsp">Browse job opening</a></li>
+			<li><a href="#">Update</a></li>
+			<li><a href="user/CheckResponse.jsp">Check Response</a></li>
+			<li id="username">Welcome,<%=userID%></li>
+			<a href="user/login.jsp" id="logout">Logout</a>
+		</ul>
+	</div>
+	<table border="1" cellpadding="10">
+		<caption>Information of the job opening</caption>
+		<tr>
+			<th>Position ID</th>
+			<td><input name="PositionID" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><input name="Position" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Whether the new job</th>
+			<td><input name="WhetherNewOrNot" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Location</th>
+			<td><input name="Location" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Salary</th>
+			<td><input name="Salary" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Number</th>
+			<td><input name="Number" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Date Posted</th>
+			<td><input name="DatePosted" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Deadline</th>
+			<td><input name="Deadline" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>E-mail</th>
+			<td><input name="Email" type="text" class="input-text-long" /></td>
+		</tr>
+		<tr>
+			<th>Description of the job</th>
+			<td><textarea name="Description" cols="50" lows="10"></textarea></td>
+		</tr>
+	</table>
+	<p>
+		<input type="submit" value="apply">
+	</p>
+</body>
+</html>

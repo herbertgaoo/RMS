@@ -1,0 +1,27 @@
+function check(form) {
+	var e = form.elements;
+	for ( var i = 0; i < e.length; i++) {
+		switch (e[i].name) {
+		case "userID":
+			if (checkNull(e[i].name)) {
+				alert("Please input userID!");
+				return false;
+			}
+			break;
+		case "password":
+			if (checkNull(e[i].name)) {
+				alert("Please input password!");
+				return false;
+			}
+			break;
+		}
+	}
+	
+}
+function checkNull(name){
+	var ems = document.getElementsByName(name);
+	if(ems[0].value == ""){
+		return true;
+	}
+	return false;
+}

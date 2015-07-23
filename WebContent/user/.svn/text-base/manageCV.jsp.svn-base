@@ -1,0 +1,100 @@
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	String userID = (String) session.getAttribute("uId");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<base href="<%=basePath%>">
+<title>Homepage for Applicants</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+	<div style="text-align: center;">
+		<img src="<%=request.getContextPath()%>/images/RecHome.jpg">
+	</div>
+	<hr>
+	<div class="nav">
+	   <ul>
+	     <li><a href="user/RecHomepage.jsp">Manage job opening</a></li>
+		 <li class="bgno"><a href="user/manageCV.jsp">Manage CV</a></li>
+		 <li><a href="user/CreateReport.jsp">Make report</a></li>
+		 <li id="username">Welcome,<%=userID%></li>
+		 <a href="user/login.jsp" id="logout">Logout</a>
+		 
+	   </ul>
+	 </div>
+<center><br />
+<h1>Manage CVs</h1>
+<form action="searchCV.action">
+  <input name="method" value="query" type="hidden" />
+<table border="1" cellpadding="0%" width="50%">
+	<tr><th>recruiter</th>
+		<td><select name="recruiter">
+			<option value="all">all CVs</option>
+			<option value="own">own CVs</option>
+		</select></td></tr>
+	<tr><th>job opening</th><td><input type="text" name="jobOpening" /></td></tr>
+	<tr><th>application status</th><td><select name="applicationStatus" >
+		<option value="applying">applying</option>
+		<option value="recruiting">recruiting</option>
+		<option value="offering">offering</option>
+		<option value=""></option>
+		<option value=""></option>
+		</select></td></tr>
+	<tr><th>school</th><td><input type="text" name="school" /></td></tr>
+	<tr><th>major</th><td><input type="text" name="major" /></td></tr>
+	<tr>
+		<th>technical level</th>
+		<td><input type="checkbox" name="technical1" value="java"/>java
+		<input type="checkbox" name="technical2" value="javascript"/>javascript
+		<input type="checkbox" name="technical3" value="c++"/>c++</td>
+	</tr>
+	<tr>
+		<th>language level</th>
+		<td><input type="checkbox" name="language1" value="English"/>English
+		<input type="checkbox" name="language2" value="Chinese"/>Chinese
+		<input type="checkbox" name="language3" value="Japanese"/>Japanese</td>	
+	</tr>
+	<tr><th>name</th><td><input type="text" name="name" /></td></tr>
+	<tr><th>phone</th><td><input type="text" name="phone" /></td></tr>
+	<tr><th>e-mail</th><td><input type="text" name="email" /></td></tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="Search"/>
+		<input type="submit" value="Insert a new CV"/></td>	
+	</tr>
+</table>
+</form>
+<br />
+<table class="ums" border='1' cellpadding="0%" width="50%">
+	<tr>
+		<th>name</th>
+		<th>status</th>
+		<th>sex</th>
+		<th>age</th>
+		<th>detail</th>
+	</tr>
+	<c:forEach var="CV" items="${CVs}" varStatus="status">
+		<tr>
+			<td>${CV.name}</td>
+			<td>${CV.status}</td>
+			<td>${CV.sex}</td>
+			<td>${CV.age}</td>
+			 <td><a href="mCV.action?method=detailCV&CV=${CVs.}">detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+		</tr>
+	</c:forEach>
+</table>
+</center>
+</body>
+</html>
